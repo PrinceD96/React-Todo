@@ -7,17 +7,17 @@ const todo = [
 	{
 		task: "Fork and clone the project",
 		id: "1528817077098",
-		completed: "false"
+		completed: false
 	},
 	{
 		task: "Install node modules",
 		id: "9876547077098",
-		completed: "false"
+		completed: false
 	},
 	{
 		task: "Start the development server",
 		id: "0987654321098",
-		completed: "false"
+		completed: false
 	}
 ];
 
@@ -59,14 +59,25 @@ class App extends React.Component {
 		this.setState(newState);
 	};
 
+	clearAll = () => {
+		const newState = {
+			...this.state,
+			todoList: this.state.todoList.filter(todo => {
+				return todo.completed;
+			})
+		};
+		this.setState(newState);
+	};
+
 	render() {
 		return (
-			<div>
+			<div className='App'>
 				<h2>Welcome to your Todo App!</h2>
 				<TodoForm addTodo={this.addTodo} />
 				<TodoList
 					todo={this.state.todoList}
 					toggleCompleted={this.toggleCompleted}
+					clearAll={this.clearAll}
 				/>
 			</div>
 		);

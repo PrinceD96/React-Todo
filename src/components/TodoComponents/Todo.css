@@ -1,4 +1,18 @@
+.App {
+	margin: 0 auto;
+	width: 500px;
+}
+
+.todo {
+	background-color: deepskyblue;
+	width: 200px;
+	text-align: left;
+	margin: 4px 0;
+	padding-left: 8px;
+	cursor: pointer;
+}
+
 .todo.completed {
-	background-color: dodgerblue;
+	background-color: skyblue;
 	text-decoration: line-through;
 }
