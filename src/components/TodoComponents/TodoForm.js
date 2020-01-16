@@ -25,8 +25,9 @@ class TodoForm extends React.Component {
 					type='text'
 					name='todo'
 					value={this.state.newTodo}
+					placeholder='...todo'
 				/>
-				<button>Add Todo</button>
+				<button type='submit'>Add Todo</button>
 			</form>
 		);
 	}
