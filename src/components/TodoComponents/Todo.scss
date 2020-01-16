@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Francois+One&display=swap");
 * {
 	box-sizing: border-box;
+	font-family: "Francois One", sans-serif;
 }
 
 body {
@@ -20,7 +22,6 @@ div,
 p,
 span {
 	color: white;
-	font-family: "Roboto", sans-serif;
 }
 
 .App {
@@ -73,7 +74,7 @@ form input {
 	border: 0;
 	outline: 0;
 	border-bottom: 1px solid #9e579d;
-	color: white;
+	color: #fff;
 }
 
 .search {
@@ -83,6 +84,8 @@ form input {
 		outline: 0;
 		border-bottom: 1px solid #9e579d;
 		background-color: #303a52;
+		color: #fff;
+		width: 210px;
 	}
 }
 
