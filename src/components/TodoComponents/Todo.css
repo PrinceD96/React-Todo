@@ -36,8 +36,9 @@ span {
 	/* border: 2px solid salmon; */
 	width: 100%;
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	align-items: center;
+	padding: 0 60px;
 }
 
 .tasks {
@@ -62,7 +63,7 @@ span {
 }
 
 .todo.completed {
-	background-color: skyblue;
+	background-color: #a56cc1;
 	text-decoration: line-through;
 }
 
@@ -73,6 +74,10 @@ form input {
 	outline: 0;
 	border-bottom: 1px solid #9e579d;
 	color: white;
+}
+
+.search {
+	margin: 15px 0 15px 60px;
 }
 
 button {
@@ -86,4 +91,7 @@ button {
 
 .clear-btn {
 	margin: 15px 0 15px 60px;
+}
+
+.addTodo-btn {
 }

@@ -22,7 +22,7 @@ const SearchForm = ({ todo }) => {
 
 	return (
 		<>
-			<form onSubmit={handleSubmit}>
+			<form onSubmit={handleSubmit} className='search'>
 				<input
 					id='task'
 					type='text'
@@ -32,6 +32,11 @@ const SearchForm = ({ todo }) => {
 					value={searchTerm}
 				/>
 			</form>
+			<div>
+				{searchResults.map(todo => {
+					return <p key={todo.id}>{todo.task}</p>;
+				})}
+			</div>
 		</>
 	);
 };
