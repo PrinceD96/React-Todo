@@ -1,6 +1,7 @@
 import React from "react";
 import TodoList from "./components/TodoComponents/TodoList";
 import TodoForm from "./components/TodoComponents/TodoForm";
+import SearchForm from "./components/TodoComponents/SearchForm";
 import "./components/TodoComponents/Todo.css";
 
 const todo = [
@@ -15,8 +16,13 @@ const todo = [
 		completed: false
 	},
 	{
-		task: "Start the development server",
+		task: "Start the dev server",
 		id: "0987654321098",
+		completed: false
+	},
+	{
+		task: "Meet MVP",
+		id: "0987654324789",
 		completed: false
 	}
 ];
@@ -59,11 +65,11 @@ class App extends React.Component {
 		this.setState(newState);
 	};
 
-	clearAll = () => {
+	clearCompleted = () => {
 		const newState = {
 			...this.state,
 			todoList: this.state.todoList.filter(todo => {
-				return todo.completed;
+				return !todo.completed;
 			})
 		};
 		this.setState(newState);
@@ -72,12 +78,18 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className='App'>
-				<h2>Welcome to your Todo App!</h2>
-				<TodoForm addTodo={this.addTodo} />
+				<div className='header'>
+					<h2>Todo App!</h2>
+					<TodoForm
+						addTodo={this.addTodo}
+						clearCompleted={this.clearCompleted}
+					/>
+				</div>
+				<SearchForm todo={this.state.todoList} />
 				<TodoList
 					todo={this.state.todoList}
 					toggleCompleted={this.toggleCompleted}
-					clearAll={this.clearAll}
+					clearCompleted={this.clearCompleted}
 				/>
 			</div>
 		);
