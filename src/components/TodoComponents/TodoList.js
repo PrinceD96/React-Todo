@@ -3,19 +3,18 @@
 import React from "react";
 import Todo from "./Todo";
 
-const TodoList = props => {
+const TodoList = ({ state, toggleCompleted, clearCompleted }) => {
+	const results = state.todoList.filter(todo => {
+		return todo.task.toLowerCase().includes(state.searchTerm.toLowerCase());
+	});
 	return (
 		<>
 			<div className='tasks'>
-				{props.todo.map(todo => (
-					<Todo
-						key={todo.id}
-						todo={todo}
-						toggleCompleted={props.toggleCompleted}
-					/>
+				{results.map(todo => (
+					<Todo key={todo.id} todo={todo} toggleCompleted={toggleCompleted} />
 				))}
 			</div>
-			<button className='clear-btn' onClick={props.clearCompleted}>
+			<button className='clear-btn' onClick={clearCompleted}>
 				Clear Completed
 			</button>
 		</>

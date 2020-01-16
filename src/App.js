@@ -2,7 +2,7 @@ import React from "react";
 import TodoList from "./components/TodoComponents/TodoList";
 import TodoForm from "./components/TodoComponents/TodoForm";
 import SearchForm from "./components/TodoComponents/SearchForm";
-import "./components/TodoComponents/Todo.css";
+import "./components/TodoComponents/Todo.scss";
 
 const todo = [
 	{
@@ -31,7 +31,8 @@ class App extends React.Component {
 	constructor(props) {
 		super();
 		this.state = {
-			todoList: todo
+			todoList: todo,
+			searchTerm: ""
 		};
 	}
 	// you will need a place to store your state in this component.
@@ -74,7 +75,9 @@ class App extends React.Component {
 		};
 		this.setState(newState);
 	};
-
+	handleSearch = e => {
+		this.setState({ ...this.state, searchTerm: e.target.value });
+	};
 	render() {
 		return (
 			<div className='App'>
@@ -85,9 +88,9 @@ class App extends React.Component {
 						clearCompleted={this.clearCompleted}
 					/>
 				</div>
-				<SearchForm todo={this.state.todoList} />
+				<SearchForm handleSearch={this.handleSearch} state={this.state} />
 				<TodoList
-					todo={this.state.todoList}
+					state={this.state}
 					toggleCompleted={this.toggleCompleted}
 					clearCompleted={this.clearCompleted}
 				/>
