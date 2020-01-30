@@ -6,12 +6,12 @@ import "./components/TodoComponents/Todo.scss";
 
 const todo = [
 	{
-		task: "Fork and clone the project",
+		task: "Fork the project",
 		id: "1528817077098",
 		completed: false
 	},
 	{
-		task: "Install node modules",
+		task: "Install modules",
 		id: "9876547077098",
 		completed: false
 	},

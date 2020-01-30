@@ -2,6 +2,7 @@
 * {
 	box-sizing: border-box;
 	font-family: "Francois One", sans-serif;
+	font-size: 62.5%;
 }
 
 body {
@@ -22,6 +23,7 @@ div,
 p,
 span {
 	color: white;
+	font-size: 2rem;
 }
 
 .App {
@@ -54,18 +56,23 @@ span {
 
 .todo {
 	background-color: #9e579d;
+	font-size: 1.2rem;
 	width: 35%;
-	height: 50px;
+	height: 45px;
 	color: aliceblue;
 	text-align: left;
 	margin: 4px 0;
-	padding-left: 8px;
+	
 	cursor: pointer;
 	transition: all 0.2s ease-in;
 	&:hover {
 		transform: translateY(-1px);
 		box-shadow: 0 -1px 0 #fff, 0 0 2px rgba(0, 0, 0, 0.12),
 			0 2px 4px rgba(0, 0, 0, 0.24);
+	}
+	p {
+		padding-left: 3%;
+		font-size: 1.3rem;
 	}
 }
 
@@ -109,7 +116,4 @@ button {
 
 .clear-btn {
 	margin: 15px 0 15px 60px;
-}
-
-.addTodo-btn {
 }
