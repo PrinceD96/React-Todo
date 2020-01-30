@@ -16,7 +16,7 @@ const todo = [
 		completed: false
 	},
 	{
-		task: "Start the dev server",
+		task: "Start the server",
 		id: "0987654321098",
 		completed: false
 	},

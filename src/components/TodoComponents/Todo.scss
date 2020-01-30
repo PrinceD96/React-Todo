@@ -56,7 +56,6 @@ span {
 
 .todo {
 	background-color: #9e579d;
-	font-size: 1.2rem;
 	width: 35%;
 	height: 45px;
 	color: aliceblue;
@@ -72,7 +71,8 @@ span {
 	}
 	p {
 		padding-left: 3%;
-		font-size: 1.3rem;
+		font-size: 1.8rem;
+		margin: 4% 0 2% 2%;
 	}
 }
 
@@ -88,6 +88,8 @@ form input {
 	outline: 0;
 	border-bottom: 1px solid #9e579d;
 	color: #fff;
+	font-size: 1.3rem;
+	max-width: 115px;
 }
 
 .search {
@@ -116,4 +118,21 @@ button {
 
 .clear-btn {
 	margin: 15px 0 15px 60px;
+}
+
+@media only screen and (max-width: 400px) {
+  body {
+    .header {
+			flex-flow: column wrap;
+		}		
+	 .clear-btn {
+		margin: 10px auto;
+	}
+	
+	.todo{
+		p{
+		font-size: 1.3rem;
+		margin: 10% 0 2% 2%;
+	}}
+ }
 }
