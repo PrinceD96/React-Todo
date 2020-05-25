@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css?family=Francois+One&display=swap");
+* {
+	box-sizing: border-box;
+	font-family: "Francois One", sans-serif;
+	font-size: 62.5%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #303a52;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+span {
+	color: white;
+	font-size: 2rem;
+}
+
+.App {
+	margin: 50px auto;
+	max-width: 600px;
+	/* border: 2px solid rebeccapurple; */
+	display: flex;
+	flex-flow: row wrap;
+	box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.header {
+	// border: 2px solid salmon;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 60px;
+}
+
+.tasks {
+	/* border: 2px solid black; */
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.todo {
+	background-color: #9e579d;
+	width: 35%;
+	height: 45px;
+	color: aliceblue;
+	text-align: left;
+	margin: 4px 0;
+	
+	cursor: pointer;
+	transition: all 0.2s ease-in;
+	&:hover {
+		transform: translateY(-1px);
+		box-shadow: 0 -1px 0 #fff, 0 0 2px rgba(0, 0, 0, 0.12),
+			0 2px 4px rgba(0, 0, 0, 0.24);
+	}
+	p {
+		padding-left: 3%;
+		font-size: 1.8rem;
+		margin: 4% 0 2% 2%;
+	}
+}
+
+.todo.completed {
+	background-color: #a56cc1;
+	text-decoration: line-through;
+}
+
+form input {
+	margin-right: 5px;
+	background-color: #303a52;
+	border: 0;
+	outline: 0;
+	border-bottom: 1px solid #9e579d;
+	color: #fff;
+	font-size: 1.3rem;
+	max-width: 115px;
+}
+
+.search {
+	input {
+		margin: 15px 0 15px 60px;
+		border: 0;
+		outline: 0;
+		border-bottom: 1px solid #9e579d;
+		background-color: #303a52;
+		color: #fff;
+		width: 210px;
+	}
+}
+
+button {
+	background-color: #574b90;
+	border: 1px solid #574b90;
+	color: white;
+	font-size: 16px;
+	padding: 6px 14px;
+	cursor: pointer;
+	&:hover {
+		background-color: lighten(#574b90, 5%);
+	}
+}
+
+.clear-btn {
+	margin: 15px 0 15px 60px;
+}
+
+@media only screen and (max-width: 400px) {
+  body {
+    .header {
+			flex-flow: column wrap;
+		}		
+	 .clear-btn {
+		margin: 10px auto;
+	}
+	
+	.todo{
+		p{
+		font-size: 1.3rem;
+		margin: 10% 0 2% 2%;
+	}}
+ }
+}
